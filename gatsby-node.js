@@ -6,7 +6,6 @@ module.exports.onCreateNode = ({ node, actions }) => {
 
   if (node.internal.type === "StripePrice") {
     const slug = slugify(node.product.name, { lower: true })
-
     createNodeField({
       node,
       name: "slug",

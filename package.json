@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@formspree/react": "^2.3.0",
     "@stripe/stripe-js": "^1.17.1",
     "dotenv": "^10.0.0",
     "gatsby": "^3.11.1",

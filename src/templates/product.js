@@ -1,9 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/Layout"
+import SEO from "../components/SEO"
 
 const ItemTemplate = ({ data, pageContext }) => {
+  console.log(data)
   const item = data.stripePrice.product
 
   return (

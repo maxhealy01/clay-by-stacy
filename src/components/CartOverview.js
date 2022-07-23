@@ -30,6 +30,8 @@ const Cart = () => {
   return (
     <div>
       {/* This is where we'll render our cart */}
+
+      <CartItems />
       <p>Number of Items: {cartCount}</p>
       <p>Total: {formattedTotalPrice}</p>
 
@@ -47,7 +49,6 @@ const Cart = () => {
       <button style={buttonStyles} onClick={clearCart}>
         Clear cart
       </button>
-      <CartItems />
     </div>
   )
 }

@@ -3,18 +3,8 @@ import React from "react"
 import { useShoppingCart, formatCurrencyString } from "use-shopping-cart"
 import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai"
 
-const cardStyles = {
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "space-around",
-  alignItems: "flex-start",
-  padding: "1rem",
-  marginBottom: "1rem",
-  boxShadow: "5px 5px 25px 0 rgba(46,61,73,.2)",
-  backgroundColor: "#fff",
-  borderRadius: "6px",
-  maxWidth: "300px",
-}
+import "./products.css"
+
 const buttonStyles = {
   fontSize: "13px",
   textAlign: "center",
@@ -22,13 +12,21 @@ const buttonStyles = {
   outline: "none",
   padding: "12px",
   boxShadow: "2px 5px 10px rgba(0,0,0,.1)",
-  backgroundColor: "coral",
-  borderRadius: "6px",
+  backgroundColor: "var(--primary-500)",
+  borderRadius: "15px",
   letterSpacing: "1.5px",
+  cursor: "pointer",
+  border: "none",
 }
 
 const littleButtonStyles = {
   padding: "2px",
+  color: "#fff",
+  backgroundColor: "var(--primary-500)",
+  border: "none",
+  margin: "0.5rem 1rem",
+  borderRadius: "70px",
+  cursor: "pointer",
 }
 
 const CartItemCard = ({ sku }) => {
@@ -36,10 +34,8 @@ const CartItemCard = ({ sku }) => {
     useShoppingCart()
   const itemDetails = cartDetails[sku.id]
 
-  console.log(itemDetails)
-
   return (
-    <div style={cardStyles}>
+    <div className="card">
       <h4>
         {sku.name}{" "}
         <span>

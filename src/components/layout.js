@@ -9,8 +9,8 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Navbar from "./Navbar"
-import "./layout.css"
+import Navbar from "./Navbar/Navbar.js"
+import "./Layout.css"
 import "../assets/css/main.css"
 
 const Layout = ({ children }) => {
@@ -35,15 +35,6 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
       </div>
     </>
   )

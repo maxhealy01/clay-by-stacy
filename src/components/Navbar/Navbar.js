@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import { FiAlignJustify } from "react-icons/fi"
 import { FaShoppingCart } from "react-icons/fa"
 import { useShoppingCart } from "use-shopping-cart"
+import "./Navbar.css"
 
 const Navbar = () => {
   const [show, setShow] = useState(false)
@@ -13,13 +14,8 @@ const Navbar = () => {
       <div className="nav-center">
         <div className="nav-header">
           <Link to="/">
-            <h2>Clay By Stacy</h2>
+            <h2>Clay by Stacy</h2>
           </Link>
-          <div className="cart-icon">
-            <Link to="/cart" className="cart-icon-child">
-              <FaShoppingCart /> <span>{cartCount}</span>
-            </Link>
-          </div>
           <button className="nav-btn" onClick={() => setShow(!show)}>
             <FiAlignJustify />
           </button>
@@ -31,7 +27,7 @@ const Navbar = () => {
             activeClassName="active-link"
             onClick={() => setShow(false)}
           >
-            Home
+            Gallery
           </Link>
           <Link
             to="/products"
@@ -42,20 +38,24 @@ const Navbar = () => {
             Products
           </Link>
           <Link
-            to="/cart"
-            className="nav-link"
-            activeClassName="active-link"
-            onClick={() => setShow(false)}
-          >
-            Cart
-          </Link>
-          <Link
             to="/about"
             className="nav-link"
             activeClassName="active-link"
             onClick={() => setShow(false)}
           >
             About
+          </Link>
+          <Link
+            to="/cart"
+            className="cart-icon nav-link"
+            activeClassName="active-link"
+            onClick={() => setShow(false)}
+          >
+            <FaShoppingCart size={30}>
+              {" "}
+              <span>{cartCount}</span>{" "}
+            </FaShoppingCart>
+            <span>{cartCount}</span>
           </Link>
           <div className="nav-link contact-link">
             <Link to="/contact" className="btn" onClick={() => setShow(false)}>

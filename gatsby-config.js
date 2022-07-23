@@ -71,6 +71,10 @@ module.exports = {
               family: "Inconsolata",
               variants: ["400", "500", "600", "700"],
             },
+            {
+              family: "Edu SA Beginner",
+              variants: ["300", "600"],
+            },
           ],
         },
       },

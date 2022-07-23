@@ -3,19 +3,8 @@ import { Link } from "gatsby"
 import slugify from "slugify"
 
 import { useShoppingCart, formatCurrencyString } from "use-shopping-cart"
+import "./products.css"
 
-const cardStyles = {
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "space-around",
-  alignItems: "flex-start",
-  padding: "1rem",
-  marginBottom: "1rem",
-  boxShadow: "5px 5px 25px 0 rgba(46,61,73,.2)",
-  backgroundColor: "#fff",
-  borderRadius: "6px",
-  maxWidth: "300px",
-}
 const buttonStyles = {
   fontSize: "13px",
   textAlign: "center",
@@ -23,7 +12,7 @@ const buttonStyles = {
   outline: "none",
   padding: "12px",
   boxShadow: "2px 5px 10px rgba(0,0,0,.1)",
-  backgroundColor: "coral",
+  backgroundColor: "var(--primary-500)",
   borderRadius: "6px",
   letterSpacing: "1.5px",
 }
@@ -34,9 +23,9 @@ const SkuCard = ({ sku }) => {
   const slug = slugify(sku.name, { lower: true })
 
   return (
-    <div style={cardStyles}>
+    <div className="card">
+      <h4>{sku.name}</h4>
       <Link key={sku.id} to={`/item/${slug}`}>
-        <h4>{sku.name}</h4>
         <div className="img-holder">
           <img src={sku.images} />
         </div>
