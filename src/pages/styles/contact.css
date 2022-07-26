@@ -8,6 +8,8 @@ input {
   margin: 5px;
   border: none;
   border-bottom: 2px solid var(--primary-500);
+  background-color: #c1a5c1;
+  color: var(--primary-500);
 }
 
 textarea {
@@ -17,7 +19,7 @@ textarea {
   box-sizing: border-box;
   border: 2px solid var(--primary-500);
   border-radius: 4px;
-  background-color: #f8f8f8;
+  background-color: #c1a5c1;
   resize: none;
 }
 

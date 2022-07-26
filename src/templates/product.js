@@ -4,7 +4,6 @@ import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 
 const ItemTemplate = ({ data, pageContext }) => {
-  console.log(data)
   const item = data.stripePrice.product
 
   return (
@@ -23,7 +22,6 @@ export const query = graphql`
       product {
         images
         name
-        description
         id
       }
       unit_amount

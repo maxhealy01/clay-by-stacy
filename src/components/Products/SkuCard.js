@@ -5,18 +5,6 @@ import slugify from "slugify"
 import { useShoppingCart, formatCurrencyString } from "use-shopping-cart"
 import "./products.css"
 
-const buttonStyles = {
-  fontSize: "13px",
-  textAlign: "center",
-  color: "#fff",
-  outline: "none",
-  padding: "12px",
-  boxShadow: "2px 5px 10px rgba(0,0,0,.1)",
-  backgroundColor: "var(--primary-500)",
-  borderRadius: "6px",
-  letterSpacing: "1.5px",
-}
-
 const SkuCard = ({ sku }) => {
   const { addItem } = useShoppingCart()
 
@@ -27,7 +15,7 @@ const SkuCard = ({ sku }) => {
       <h4>{sku.name}</h4>
       <Link key={sku.id} to={`/item/${slug}`}>
         <div className="img-holder">
-          <img src={sku.images} />
+          <img src={sku.images} alt={sku.description} />
         </div>
       </Link>
       <p>
@@ -37,7 +25,7 @@ const SkuCard = ({ sku }) => {
           currency: sku.currency,
         })}
       </p>
-      <button style={buttonStyles} onClick={() => addItem(sku)}>
+      <button className="big-button" onClick={() => addItem(sku)}>
         ADD TO CART
       </button>
     </div>

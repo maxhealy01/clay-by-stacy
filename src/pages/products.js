@@ -9,6 +9,11 @@ const ProductsPage = () => {
     <Layout>
       <SEO title="Products" />
       <Skus />
+      <p>
+        You can make inquiries regarding custom products in the contact page!
+        Pricing will vary according to the number of figures and the scale of
+        the project.
+      </p>
     </Layout>
   )
 }

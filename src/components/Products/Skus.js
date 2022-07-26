@@ -28,6 +28,7 @@ export default props => (
                 images
                 id
                 name
+                description
               }
             }
           }
@@ -43,6 +44,7 @@ export default props => (
             price: price.unit_amount,
             currency: price.currency,
             images: price.product.images,
+            description: price.product.description,
           }
           return <SkuCard key={price.id} sku={newSku} />
         })}

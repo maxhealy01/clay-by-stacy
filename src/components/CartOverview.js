@@ -5,18 +5,6 @@ import { loadStripe } from "@stripe/stripe-js"
 
 import CartItems from "./CartItems"
 
-const buttonStyles = {
-  fontSize: "13px",
-  textAlign: "center",
-  color: "#fff",
-  outline: "none",
-  padding: "12px",
-  boxShadow: "2px 5px 10px rgba(0,0,0,.1)",
-  backgroundColor: "coral",
-  borderRadius: "6px",
-  letterSpacing: "1.5px",
-}
-
 const Cart = () => {
   const [loading, setLoading] = useState(false)
   /* Gets the totalPrice and a method for redirecting to stripe */
@@ -37,17 +25,17 @@ const Cart = () => {
 
       {/* Redirects the user to Stripe */}
       <button
-        style={buttonStyles}
         disabled={loading}
+        className="big-button"
         onClick={() => {
           setLoading(true)
           redirectToCheckout()
         }}
       >
-        {loading ? "Loading..." : "Checkout"}
+        {loading ? "Loading..." : "CHECKOUT"}
       </button>
-      <button style={buttonStyles} onClick={clearCart}>
-        Clear cart
+      <button className="big-button" onClick={clearCart}>
+        CLEAR CART
       </button>
     </div>
   )
