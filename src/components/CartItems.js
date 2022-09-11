@@ -4,8 +4,7 @@ import CartItemCard from "./Products/CartItemCard"
 import { useShoppingCart } from "use-shopping-cart"
 
 const CartItems = () => {
-  const { cartDetails, decrementItem, incrementItem, removeItem } =
-    useShoppingCart()
+  const { cartDetails } = useShoppingCart()
 
   const cart = []
 

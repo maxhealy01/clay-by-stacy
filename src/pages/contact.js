@@ -1,7 +1,7 @@
 import React from "react"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import { useForm, ValidationError } from "@formspree/react"
 import "./styles/contact.css"
 
@@ -13,7 +13,7 @@ const ContactPage = () => {
   }
   return (
     <Layout>
-      <SEO title="Contact" />
+      <Seo title="Contact" />
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="email">Email Address: </label>

@@ -104,15 +104,20 @@
 }
 
 .cart-icon {
-  justify-self: right !important;
+  justify-self: left !important;
+  display: inline-block;
 }
 
 .cart-container {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  /* flex-wrap: wrap;
+  justify-content: space-between; */
   padding: 1rem 0 1rem 0;
+}
+
+.cart-count {
+  justify-self: left;
 }
 
 h2 {

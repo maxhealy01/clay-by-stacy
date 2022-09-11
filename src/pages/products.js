@@ -1,13 +1,13 @@
 import React from "react"
 import Skus from "../components/Products/Skus"
-import SEO from "../components/SEO"
+import Seo from "../components/Seo"
 import Layout from "../components/Layout"
 import { loadStripe } from "@stripe/stripe-js"
 
 const ProductsPage = () => {
   return (
     <Layout>
-      <SEO title="Products" />
+      <Seo title="Products" />
       <Skus />
       <p>
         You can make inquiries regarding custom products in the contact page!

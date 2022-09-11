@@ -2,13 +2,13 @@ import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
 
 import Layout from "../components/Layout"
-import SEO from "../components/SEO"
+import Seo from "../components/Seo"
 import "./styles/about.css"
 
 const AboutPage = () => {
   return (
     <Layout>
-      <SEO title="About" />
+      <Seo title="About" />
       <main className="page">
         <StaticImage src="../images/portrait.jpg" quality={95} width={200} />
         <p>

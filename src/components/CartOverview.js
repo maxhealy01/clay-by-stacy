@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 
 import { useShoppingCart } from "use-shopping-cart"
 import { loadStripe } from "@stripe/stripe-js"

@@ -3,12 +3,12 @@ import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/Layout"
-import SEO from "../components/SEO"
+import Seo from "../components/Seo"
 import "./styles/gallery.css"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <Seo title="Home" />
     <div className="row">
       <div className="column">
         <StaticImage

@@ -1,19 +1,17 @@
 import React from "react"
 
 import Layout from "../components/Layout"
-import SEO from "../components/SEO"
+import Seo from "../components/Seo"
 
-import SkuCard from "../components/Products/SkuCard"
-import Skus from "../components/Products/Skus"
 import CartOverview from "../components/CartOverview"
 
-const CartExample = () => {
+const Cart = () => {
   return (
     <Layout>
-      <SEO title="Cart" />
+      <Seo title="Cart" />
       <CartOverview />
     </Layout>
   )
 }
 
-export default CartExample
+export default Cart
