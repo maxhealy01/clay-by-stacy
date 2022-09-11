@@ -51,8 +51,9 @@ const Navbar = () => {
             activeClassName="active-link"
             onClick={() => setShow(false)}
           >
-            <FaShoppingCart size={30}> </FaShoppingCart>
-            <span className="cart-count">{cartCount}</span>
+            <FaShoppingCart size={30}>
+              <span className="cart-count">{cartCount}</span>
+            </FaShoppingCart>
           </Link>
           <div className="nav-link contact-link">
             <Link to="/contact" className="btn" onClick={() => setShow(false)}>
