@@ -1,7 +1,7 @@
 import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
 
-import Layout from "../components/Layout"
+import Layout from "../components/Layout/Layout"
 import Seo from "../components/Seo"
 import "./styles/about.css"
 

@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
-import Layout from "../components/Layout"
+import Layout from "../components/Layout/Layout"
 import Seo from "../components/Seo"
 import "./styles/gallery.css"
 
@@ -59,9 +59,9 @@ const IndexPage = () => (
           alt={"A female clay sculpture lying down."}
         />
         <StaticImage
-          src="../images/gallery/dresser.jpg"
+          src="../images/gallery/work3.jpg"
           quality={95}
-          alt={"A dresser with knobs decorated in floral clay patterns."}
+          alt={"The artist working on figures for a nativity scene."}
         />
       </div>
     </div>

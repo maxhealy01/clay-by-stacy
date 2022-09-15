@@ -5,6 +5,8 @@ import { loadStripe } from "@stripe/stripe-js"
 
 import CartItems from "./CartItems"
 
+import "./cart.css"
+
 const Cart = () => {
   const [loading, setLoading] = useState(false)
   /* Gets the totalPrice and a method for redirecting to stripe */

@@ -1,7 +1,9 @@
 import React from "react"
-import CartItemCard from "./Products/CartItemCard"
+import CartItemCard from "../Products/CartItemCard"
 
 import { useShoppingCart } from "use-shopping-cart"
+
+import "./cart.css"
 
 const CartItems = () => {
   const { cartDetails } = useShoppingCart()

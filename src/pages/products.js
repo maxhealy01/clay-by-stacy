@@ -1,7 +1,7 @@
 import React from "react"
 import Skus from "../components/Products/Skus"
 import Seo from "../components/Seo"
-import Layout from "../components/Layout"
+import Layout from "../components/Layout/Layout"
 import { loadStripe } from "@stripe/stripe-js"
 
 const ProductsPage = () => {

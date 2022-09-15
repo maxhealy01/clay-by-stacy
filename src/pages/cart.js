@@ -1,9 +1,9 @@
 import React from "react"
 
-import Layout from "../components/Layout"
+import Layout from "../components/Layout/Layout"
 import Seo from "../components/Seo"
 
-import CartOverview from "../components/CartOverview"
+import CartOverview from "../components/Cart/CartOverview"
 
 const Cart = () => {
   return (
