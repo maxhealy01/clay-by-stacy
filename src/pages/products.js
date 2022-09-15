@@ -1,6 +1,6 @@
 import React from "react"
 import Skus from "../components/Products/Skus"
-import Seo from "../components/Seo"
+import Seo from "../components/seo"
 import Layout from "../components/Layout/Layout"
 import { loadStripe } from "@stripe/stripe-js"
 
