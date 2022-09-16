@@ -9,7 +9,7 @@ const ContactPage = () => {
   const [state, handleSubmit] = useForm("mdobqpaq")
   if (state.succeeded) {
     // Redirect to contact page after five seconds
-    return <p>Thanks for joining!</p>
+    return <p>Thanks for reaching out!</p>
   }
   return (
     <Layout>

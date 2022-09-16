@@ -12,28 +12,20 @@ const AboutPage = () => {
       <main className="page">
         <StaticImage src="../images/portrait.jpg" quality={95} width={200} />
         <p>
-          I'm baby messenger bag salvia thundercats, retro sriracha ugh iPhone
-          tonx pop-up roof party drinking vinegar cold-pressed shaman. Ramps
-          retro gochujang prism try-hard sartorial everyday carry brunch you
-          probably haven't heard of them. Helvetica typewriter gastropub
-          gluten-free, marfa wayfarers selfies gochujang chambray jean shorts
-          quinoa.
+          My name is Stacy Healy. I’ve been making clay art for over thirty
+          years. Over that period I’ve been able to work in a variety of styles,
+          including small figures depicting families and pets, Christmas tree
+          ornaments, decorative patterns to adorn everyday items, and more
+          realistic sculptures.
         </p>
         <p>
-          Kale chips 3 wolf moon paleo freegan mumblecore. Tumeric tattooed man
-          bun tbh fixie knausgaard, sartorial vape hell of. Tousled knausgaard
-          cray, intelligentsia vegan messenger bag typewriter subway tile.
-          Vexillologist crucifix flannel ethical. Echo park pabst next level
-          coloring book post-ironic letterpress neutra actually 8-bit. Health
-          goth banjo coloring book tonx. Godard copper mug single-origin coffee,
-          activated charcoal flexitarian chillwave pop-up DSA hella actually
-          enamel pin.
+          For thirty-six years, I’ve been a loving mother, and nothing has
+          brought me more joy than my three beautiful boys. At the same time,
+          I’ve been an artist my whole life, and this website coincides with my
+          public debut, containing work that I feel is representative of my
+          artistic vision.
         </p>
-        <p>
-          Cray readymade lomo man braid poke. Food truck wayfarers viral green
-          juice yuccie, celiac prism leggings craft beer portland gentrify
-          bespoke lyft wolf.
-        </p>
+        <p>I hope you enjoy it.</p>
       </main>
     </Layout>
   )

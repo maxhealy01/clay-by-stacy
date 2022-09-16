@@ -4,7 +4,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Creative Clay By Stacy`,
+    title: `Clay By Stacy`,
     description: `This is a web shop selling handcrafted clay wares made by Stacy Healy.`,
     author: `@gatsbyjs`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
