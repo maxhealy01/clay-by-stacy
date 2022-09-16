@@ -13,11 +13,11 @@ const SkuCard = ({ sku }) => {
   return (
     <div className="card">
       <h4>{sku.name}</h4>
-      <Link key={sku.id} to={`/item/${slug}`}>
-        <div className="img-holder">
-          <img src={sku.images} alt={sku.description} />
-        </div>
-      </Link>
+      {/* <Link key={sku.id} to={`/item/${slug}`}> */}
+      <div className="img-holder">
+        <img src={sku.images} alt={sku.description} />
+      </div>
+      {/* </Link> */}
       <p>
         Price:{" "}
         {formatCurrencyString({
