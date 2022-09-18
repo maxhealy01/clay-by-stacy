@@ -31,7 +31,7 @@ const Cart = () => {
         className="big-button"
         onClick={() => {
           setLoading(true)
-          await redirectToCheckout()
+          redirectToCheckout()
         }}
       >
         {loading ? "Loading..." : "CHECKOUT"}
