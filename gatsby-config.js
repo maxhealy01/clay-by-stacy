@@ -7,7 +7,7 @@ module.exports = {
     title: `Clay By Stacy`,
     description: `This is a web shop selling handcrafted clay wares made by Stacy Healy.`,
     author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    siteUrl: `https://claybystacy.net`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
