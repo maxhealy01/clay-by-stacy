@@ -17,21 +17,6 @@ const Cart = () => {
     console.log(res)
   })
 
-  async function handleClick(event) {
-    event.preventDefault()
-
-    if (cartCount > 0) {
-      try {
-        const result = await redirectToCheckout()
-        if (result?.error) {
-          console.error(result)
-        }
-      } catch (error) {
-        console.error(error)
-      }
-    }
-  }
-
   return (
     <div>
       {/* This is where we'll render our cart */}
@@ -46,7 +31,7 @@ const Cart = () => {
         className="big-button"
         onClick={() => {
           setLoading(true)
-          handleClick()
+          await redirectToCheckout()
         }}
       >
         {loading ? "Loading..." : "CHECKOUT"}
