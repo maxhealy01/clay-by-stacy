@@ -45,19 +45,19 @@ module.exports = {
         downloadFiles: false,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-use-shopping-cart`,
-    //   options: {
-    //     mode: "payment",
-    //     cartMode: "client-only",
-    //     stripePublicKey: `${process.env.GATSBY_STRIPE_PUBLIC_KEY}`,
-    //     successUrl: "http://claybystacy.net/success", // url must start with http or https
-    //     cancelUrl: "http://claybystacy.net/", // url must start with http or https
-    //     currency: "USD",
-    //     allowedCountries: ["US", "GB", "CA"],
-    //     billingAddressCollection: true,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-use-shopping-cart`,
+      options: {
+        mode: "payment",
+        cartMode: "client-only",
+        stripePublicKey: `${process.env.GATSBY_STRIPE_PUBLIC_KEY}`,
+        successUrl: "http://claybystacy.net/success", // url must start with http or https
+        cancelUrl: "http://claybystacy.net/", // url must start with http or https
+        currency: "USD",
+        allowedCountries: ["US", "GB", "CA"],
+        billingAddressCollection: true,
+      },
+    },
     {
       resolve: "gatsby-plugin-webfonts",
       options: {
