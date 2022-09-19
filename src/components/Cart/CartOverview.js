@@ -13,17 +13,9 @@ const Cart = () => {
   const { formattedTotalPrice, redirectToCheckout, cartCount, clearCart } =
     useShoppingCart()
 
-  loadStripe(`${process.env.GATSBY_STRIPE_PUBLISHABLE_KEY}`).then(res => {
-    console.log(res)
-  })
-
-  async function handleClick(e) {
-    e.preventDefault()
-
-    if (cartCount > 0) {
-      const result = await redirectToCheckout()
-    }
-  }
+  // loadStripe(`${process.env.GATSBY_STRIPE_PUBLISHABLE_KEY}`).then(res => {
+  //   console.log(res)
+  // })
 
   return (
     <div>
@@ -39,7 +31,7 @@ const Cart = () => {
         className="big-button"
         onClick={() => {
           setLoading(true)
-          handleClick
+          redirectToCheckout()
         }}
       >
         {loading ? "Loading..." : "CHECKOUT"}
