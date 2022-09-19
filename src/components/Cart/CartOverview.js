@@ -13,9 +13,9 @@ const Cart = () => {
   const { formattedTotalPrice, redirectToCheckout, cartCount, clearCart } =
     useShoppingCart()
 
-  // loadStripe(`${process.env.GATSBY_STRIPE_PUBLISHABLE_KEY}`).then(res => {
-  //   console.log(res)
-  // })
+  loadStripe(`${process.env.GATSBY_STRIPE_PUBLISHABLE_KEY}`).then(res => {
+    console.log(res)
+  })
 
   return (
     <div>
