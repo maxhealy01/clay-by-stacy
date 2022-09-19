@@ -15,6 +15,8 @@ const stripePromise = loadStripe(
 const Cart = () => {
   return (
     <Layout>
+      <Seo title="Cart" />
+
       <CartProvider
         mode="client-only"
         stripe={stripePromise}
@@ -24,7 +26,6 @@ const Cart = () => {
         allowedCountries={["US", "GB", "CA"]}
         billingAddressCollection={true}
       >
-        <Seo title="Cart" />
         <CartOverview />
       </CartProvider>
     </Layout>
