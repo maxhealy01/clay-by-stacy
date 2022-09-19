@@ -16,7 +16,7 @@ const Cart = () => {
       <Seo title="Cart" />
       <CartProvider
         mode="client-only"
-        stripe={stripePromise}
+        stripe={`${stripePromise}`}
         successUrl={`${window.location.origin}/page-2/`}
         cancelUrl={`${window.location.origin}/`}
         currency="USD"
