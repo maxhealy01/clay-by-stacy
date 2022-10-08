@@ -51,7 +51,7 @@ module.exports = {
         mode: "payment",
         cartMode: "client-only",
         stripePublicKey: `${process.env.GATSBY_STRIPE_PUBLIC_KEY}`,
-        successUrl: "http://claybystacy.net/",
+        successUrl: "http://claybystacy.net/success",
         cancelUrl: "http://claybystacy.net/",
         currency: "USD",
         allowedCountries: ["US", "GB", "CA"],
