@@ -33,8 +33,8 @@ const Layout = ({ children }) => {
       mode="payment"
       cartMode="client-only"
       stripe={process.env.GATSBY_STRIPE_PUBLIC_KEY}
-      successUrl="claybystacy.net/success"
-      cancelUrl="claybystacy.net/"
+      successUrl="https://claybystacy.net/success"
+      cancelUrl="https://claybystacy.net/"
       currency="USD"
       allowedCountries={["US", "GB", "CA"]}
       billingAddressCollection={true}
