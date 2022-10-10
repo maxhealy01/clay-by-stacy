@@ -14,8 +14,10 @@ import "./Layout.css"
 import "../../assets/css/main.css"
 
 import { CartProvider } from "use-shopping-cart"
+import getStripe from "../../utils/stripejs.js"
 
 const Layout = ({ children }) => {
+  getStripe()
   const stripeKey = process.env.GATSBY_STRIPE_PUBLIC_KEY
 
   const data = useStaticQuery(graphql`
