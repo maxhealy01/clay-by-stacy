@@ -43,7 +43,7 @@ const Cart = () => {
       <button
         disabled={loading}
         className="big-button"
-        onClick={() => handleClick()}
+        onClick={() => handleClick(event)}
       >
         {loading ? "Loading..." : "CHECKOUT"}
       </button>
