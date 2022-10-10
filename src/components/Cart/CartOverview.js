@@ -40,11 +40,7 @@ const Cart = () => {
       <p>Total: {formattedTotalPrice}</p>
 
       {/* Redirects the user to Stripe */}
-      <button
-        disabled={loading}
-        className="big-button"
-        onClick={() => handleClick(event)}
-      >
+      <button disabled={loading} className="big-button" onClick={handleClick}>
         {loading ? "Loading..." : "CHECKOUT"}
       </button>
       <button className="big-button" onClick={clearCart}>
