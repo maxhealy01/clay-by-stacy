@@ -16,19 +16,15 @@ const Cart = () => {
     event.preventDefault()
 
     if (cartCount > 0) {
-      setStatus("idle")
       try {
         const result = await redirectToCheckout()
         if (result?.error) {
           console.error(result)
-          setStatus("redirect-error")
         }
       } catch (error) {
         console.error(error)
-        setStatus("redirect-error")
       }
     } else {
-      setStatus("missing-items")
     }
   }
   return (
