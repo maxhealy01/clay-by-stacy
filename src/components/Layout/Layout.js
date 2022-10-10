@@ -18,8 +18,6 @@ import getStripe from "../../utils/stripejs.js"
 
 const Layout = ({ children }) => {
   getStripe()
-  const stripeKey = process.env.GATSBY_STRIPE_PUBLIC_KEY
-
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -34,7 +32,7 @@ const Layout = ({ children }) => {
     <CartProvider
       mode="payment"
       cartMode="client-only"
-      stripe={stripeKey}
+      stripe={process.env.GATSBY_STRIPE_PUBLIC_KEY}
       successUrl="https://claybystacy.net/success"
       cancelUrl="https://claybystacy.net/"
       currency="USD"

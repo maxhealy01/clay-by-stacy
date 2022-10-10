@@ -12,6 +12,25 @@ const Cart = () => {
   const { formattedTotalPrice, redirectToCheckout, cartCount, clearCart } =
     useShoppingCart()
 
+  async function handleClick(event) {
+    event.preventDefault()
+
+    if (cartCount > 0) {
+      setStatus("idle")
+      try {
+        const result = await redirectToCheckout()
+        if (result?.error) {
+          console.error(result)
+          setStatus("redirect-error")
+        }
+      } catch (error) {
+        console.error(error)
+        setStatus("redirect-error")
+      }
+    } else {
+      setStatus("missing-items")
+    }
+  }
   return (
     <div>
       {/* This is where we'll render our cart */}
@@ -24,10 +43,7 @@ const Cart = () => {
       <button
         disabled={loading}
         className="big-button"
-        onClick={() => {
-          setLoading(true)
-          redirectToCheckout()
-        }}
+        onClick={() => handleClick()}
       >
         {loading ? "Loading..." : "CHECKOUT"}
       </button>
