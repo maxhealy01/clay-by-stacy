@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import * as React from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -13,7 +13,11 @@ import Navbar from "../Navbar/Navbar.js"
 import "./Layout.css"
 import "../../assets/css/main.css"
 
+import { CartProvider } from "use-shopping-cart"
+
 const Layout = ({ children }) => {
+  const stripeKey = process.env.GATSBY_STRIPE_PUBLIC_KEY
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -25,7 +29,16 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <CartProvider
+      mode="payment"
+      cartMode="client-only"
+      stripe={stripeKey}
+      successUrl="https://claybystacy.net/success"
+      cancelUrl="https://claybystacy.net/"
+      currency="USD"
+      allowedCountries={["US", "GB", "CA"]}
+      billingAddressCollection={true}
+    >
       <Navbar />
       <div
         style={{
@@ -36,7 +49,7 @@ const Layout = ({ children }) => {
       >
         <main>{children}</main>
       </div>
-    </>
+    </CartProvider>
   )
 }
 

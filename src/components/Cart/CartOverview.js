@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 
 import { useShoppingCart } from "use-shopping-cart"
-import { loadStripe } from "@stripe/stripe-js"
 
 import CartItems from "./CartItems"
 
@@ -12,10 +11,6 @@ const Cart = () => {
   /* Gets the totalPrice and a method for redirecting to stripe */
   const { formattedTotalPrice, redirectToCheckout, cartCount, clearCart } =
     useShoppingCart()
-
-  loadStripe(`${process.env.GATSBY_STRIPE_PUBLISHABLE_KEY}`).then(res => {
-    console.log(res)
-  })
 
   return (
     <div>
