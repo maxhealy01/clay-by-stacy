@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
     <CartProvider
       mode="payment"
       cartMode="client-only"
-      stripe={process.env.GATSBY_STRIPE_SECRET_KEY}
+      stripe={process.env.GATSBY_STRIPE_PUBLIC_KEY}
       successUrl="https://claybystacy.net/success"
       cancelUrl="https://claybystacy.net/"
       currency="USD"
