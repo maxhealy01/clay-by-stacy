@@ -18,6 +18,7 @@ const Cart = () => {
     if (cartCount > 0) {
       try {
         setLoading(true)
+        console.log(process.env.GATSBY_STRIPE_PUBLIC_KEY)
         const result = await redirectToCheckout()
         if (result?.error) {
           console.error(result)
