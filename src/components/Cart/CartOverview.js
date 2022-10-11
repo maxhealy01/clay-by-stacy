@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 
 import { useShoppingCart } from "use-shopping-cart"
-import { loadStripe } from "@stripe/stripe-js"
 
 import CartItems from "./CartItems"
 
@@ -13,10 +12,21 @@ const Cart = () => {
   const { formattedTotalPrice, redirectToCheckout, cartCount, clearCart } =
     useShoppingCart()
 
-  loadStripe(`${process.env.GATSBY_STRIPE_PUBLISHABLE_KEY}`).then(res => {
-    console.log(res)
-  })
+  async function handleClick(event) {
+    event.preventDefault()
 
+    if (cartCount > 0) {
+      try {
+        setLoading(true)
+        const result = await redirectToCheckout()
+        if (result?.error) {
+          console.error(result)
+        }
+      } catch (error) {
+        console.error(error)
+      }
+    }
+  }
   return (
     <div>
       {/* This is where we'll render our cart */}
@@ -26,14 +36,7 @@ const Cart = () => {
       <p>Total: {formattedTotalPrice}</p>
 
       {/* Redirects the user to Stripe */}
-      <button
-        disabled={loading}
-        className="big-button"
-        onClick={() => {
-          setLoading(true)
-          redirectToCheckout()
-        }}
-      >
+      <button disabled={loading} className="big-button" onClick={handleClick}>
         {loading ? "Loading..." : "CHECKOUT"}
       </button>
       <button className="big-button" onClick={clearCart}>
