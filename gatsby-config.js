@@ -42,7 +42,7 @@ module.exports = {
       options: {
         objects: ["Price"],
         secretKey: process.env.GATSBY_STRIPE_SECRET_KEY,
-        downloadFiles: true,
+        downloadFiles: false,
       },
     },
     // {
