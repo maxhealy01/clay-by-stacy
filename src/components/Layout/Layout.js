@@ -14,10 +14,8 @@ import "./Layout.css"
 import "../../assets/css/main.css"
 
 import { CartProvider } from "use-shopping-cart"
-import getStripe from "../../utils/stripejs.js"
 
 const Layout = ({ children }) => {
-  getStripe()
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {

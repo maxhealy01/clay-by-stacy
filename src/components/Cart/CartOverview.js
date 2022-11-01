@@ -3,28 +3,37 @@ import React, { useState } from "react"
 import { useShoppingCart } from "use-shopping-cart"
 
 import CartItems from "./CartItems"
+import getStripe from "../../utils/stripejs.js"
 
 import "./cart.css"
 
 const Cart = () => {
   const [loading, setLoading] = useState(false)
   /* Gets the totalPrice and a method for redirecting to stripe */
-  const { formattedTotalPrice, redirectToCheckout, cartCount, clearCart } =
-    useShoppingCart()
-
+  const {
+    formattedTotalPrice,
+    redirectToCheckout,
+    cartCount,
+    clearCart,
+    cartDetails,
+  } = useShoppingCart()
+  console.log(cartDetails)
   async function handleClick(event) {
     event.preventDefault()
 
     if (cartCount > 0) {
-      try {
-        setLoading(true)
-        const result = await redirectToCheckout()
-        if (result?.error) {
-          console.error(result)
-        }
-      } catch (error) {
-        console.error(error)
-      }
+      setLoading(true)
+      const response = await fetch("/.netlify/functions/create-session", {
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(cartDetails),
+      })
+        .then(res => res.json())
+        .catch(error => {
+          /* Error handling */
+        })
+
+      redirectToCheckout({ sessionId: response.sessionId })
     }
   }
   return (
