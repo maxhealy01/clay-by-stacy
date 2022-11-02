@@ -29,11 +29,10 @@ const Cart = () => {
         body: JSON.stringify(cartDetails),
       })
         .then(res => res.json())
+        .then(redirectToCheckout({ sessionId: response.sessionId }))
         .catch(error => {
           /* Error handling */
         })
-
-      redirectToCheckout({ sessionId: response.sessionId })
     }
   }
   return (
