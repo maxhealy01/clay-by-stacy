@@ -3,7 +3,10 @@ import React, { useState } from "react"
 import { useShoppingCart } from "use-shopping-cart"
 
 import CartItems from "./CartItems"
-import getStripe from "../../utils/stripejs.js"
+import { loadStripe } from "@stripe/stripe-js"
+// Make sure to call `loadStripe` outside of a component’s render to avoid
+// recreating the `Stripe` object on every render.
+const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLIC_KEY)
 
 import "./cart.css"
 
@@ -21,7 +24,7 @@ const Cart = () => {
   async function handleClick(event) {
     event.preventDefault()
 
-    const stripe = await getStripe()
+    const stripe = await stripePromise
 
     // Create a useable array of line items, as per stripe's requirements
     const cartKeys = Object.keys(cartDetails)
