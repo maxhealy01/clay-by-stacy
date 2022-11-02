@@ -17,21 +17,41 @@ const Cart = () => {
     clearCart,
     cartDetails,
   } = useShoppingCart()
+  console.log(cartDetails)
   async function handleClick(event) {
     event.preventDefault()
 
+    const stripe = await getStripe()
+
+    // Create a useable array of line items, as per stripe's requirements
+    const cartKeys = Object.keys(cartDetails)
+
+    let lineItems = []
+    cartKeys.forEach(key => {
+      lineItems.push({
+        price: cartDetails[key].id,
+        quantity: cartDetails[key].quantity,
+      })
+    })
+
     if (cartCount > 0) {
       setLoading(true)
-      const response = await fetch("/.netlify/functions/create-session", {
-        method: "post",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(cartDetails),
+      const { error } = await stripe.redirectToCheckout({
+        lineItems: lineItems,
+        mode: "payment",
+        successUrl: "https://claybystacy.net/success",
+        cancelUrl: "https://claybystacy.net",
       })
-        .then(res => res.json())
-        .then(redirectToCheckout({ sessionId: response.sessionId }))
-        .catch(error => {
-          /* Error handling */
-        })
+      // const response = await fetch("/.netlify/functions/create-session", {
+      //   method: "post",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify(cartDetails),
+      // })
+      //   .then(res => res.json())
+      //   .then(redirectToCheckout({ sessionId: response.sessionId }))
+      //   .catch(error => {
+      //     /* Error handling */
+      //   })
     }
   }
   return (
