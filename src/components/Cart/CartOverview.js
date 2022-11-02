@@ -17,7 +17,6 @@ const Cart = () => {
     clearCart,
     cartDetails,
   } = useShoppingCart()
-  console.log(cartDetails)
   async function handleClick(event) {
     event.preventDefault()
 
