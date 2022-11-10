@@ -10,7 +10,9 @@ const AboutPage = () => {
     <Layout>
       <Seo title="About" />
       <main className="page">
-        <StaticImage src="../images/portrait.jpg" quality={95} width={200} />
+        <div className="picture">
+          <StaticImage src="../images/portrait.jpg" quality={95} width={200} />
+        </div>
         <p>
           My name is Stacy Healy. I’ve been making clay art for over thirty
           years. Over that period I’ve been able to work in a variety of styles,

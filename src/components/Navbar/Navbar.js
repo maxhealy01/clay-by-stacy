@@ -59,7 +59,10 @@ const Navbar = () => {
             activeClassName="active-link"
             onClick={() => setShow(false)}
           >
-            Cart (<span className="cart-count">{cartCount}</span>)
+            Cart
+            {cartCount > 0 && (
+              <span className="cart-count"> ({cartCount})</span>
+            )}
           </Link>
           <Link
             to="/contact"

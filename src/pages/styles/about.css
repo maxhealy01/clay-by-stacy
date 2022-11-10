@@ -10,7 +10,11 @@ img {
   border-radius: 20px;
   padding: 0 10px 0 0;
 }
+.picture {
+  margin-bottom: 1.5rem;
+}
 
 p {
+  font-size: 1.4rem;
   text-align: justify;
 }
