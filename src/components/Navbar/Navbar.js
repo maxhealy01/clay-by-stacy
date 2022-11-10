@@ -14,7 +14,7 @@ const Navbar = () => {
       <div className="nav-center">
         <div className="nav-header">
           <Link to="/">
-            <h2>Clay by Stacy</h2>
+            <h2 className="site-title">Clay by Stacy</h2>
           </Link>
           <button className="nav-btn" onClick={() => setShow(!show)}>
             <FiAlignJustify />
@@ -37,6 +37,14 @@ const Navbar = () => {
           >
             Products
           </Link>
+          {/* <Link
+            to="/custom"
+            className="nav-link"
+            activeClassName="active-link"
+            onClick={() => setShow(false)}
+          >
+            Custom
+          </Link> */}
           <Link
             to="/about"
             className="nav-link"
@@ -51,15 +59,16 @@ const Navbar = () => {
             activeClassName="active-link"
             onClick={() => setShow(false)}
           >
-            <FaShoppingCart size={30}>
-              <span className="cart-count">{cartCount}</span>
-            </FaShoppingCart>
+            Cart (<span className="cart-count">{cartCount}</span>)
           </Link>
-          <div className="nav-link contact-link">
-            <Link to="/contact" className="btn" onClick={() => setShow(false)}>
-              Contact
-            </Link>
-          </div>
+          <Link
+            to="/contact"
+            className="cart-icon nav-link"
+            activeClassName="active-link"
+            onClick={() => setShow(false)}
+          >
+            Contact
+          </Link>
         </div>
       </div>
     </nav>

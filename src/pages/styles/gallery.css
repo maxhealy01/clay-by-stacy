@@ -15,8 +15,20 @@
   margin-top: 8px !important;
   vertical-align: middle;
   width: 100%;
+  cursor: pointer;
 }
 
+.modal-content {
+  max-width: 60vw !important;
+  margin: auto;
+  margin-bottom: 5rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .modal-content {
+    max-width: 75vw !important;
+  }
+}
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
   .column {
