@@ -4,7 +4,7 @@
 
 To deploy the website on your computer, clone the repository and type "npm start" into your CLI.
 
-Alternatively, you can visit the website at **url**
+Alternatively, you can visit the website at [**url**](https://www.claybystacy.net/)
 
 ## The Stack
 
